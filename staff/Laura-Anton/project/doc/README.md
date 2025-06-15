@@ -59,6 +59,13 @@ User
 - email (String, required, unique)
 - password (String, values: regular | admin, required)
 
+Clothes
+- id (UUID)
+- image (String)
+- description (String) 
+- size (String)
+- category (string)
+
 
 ### Technologies
 
