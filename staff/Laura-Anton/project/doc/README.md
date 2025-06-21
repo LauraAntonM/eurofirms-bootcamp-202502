@@ -13,7 +13,10 @@ regular (user)
 
 - search clothes
 - book clothes
-- chat with store
+- register user
+- logic user
+- add cart
+
 
 ### Prototype
 
@@ -58,14 +61,15 @@ User
 - name (String, required)
 - email (String, required, unique)
 - password (String, values: regular | admin, required)
+- telefono (Number)
 
 Clothes
-- id (UUID)
-- image (String)
-- description (String) 
-- size (String)
-- category (string)
-
+- id (UUID) 
+- image (String, Required)
+- description (String, Required) 
+- size (String, Required, Enum(XS-XL))
+- category (string, Enum, required)
+- title (String, required)
 
 ### Technologies
 
