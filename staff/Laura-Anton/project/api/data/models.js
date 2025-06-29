@@ -43,6 +43,9 @@ const user = new Schema ({
 
 const User = model('User', user)
 
+
+const clothe = new Schema
+
 export{
     User
 }
