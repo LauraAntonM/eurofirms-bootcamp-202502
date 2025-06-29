@@ -20,7 +20,7 @@ regular (user)
 
 ### Prototype
 
-[Figma] (https: //www.figma.com)
+[Figma] (https://www.figma.com/design/EWIxkvo6veQ0Es4rWAMq8f/Untitled?t=FiVNzU8oZkkTdD9s-0)
 
 ## Technical
 
