@@ -9,7 +9,7 @@
 ![Lion](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYm9zdmlkNzJ4NXpxNXg3a29mdngwbWw3cmZ2bTV4dWM0NW9zcmhxbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KGTdBknWrIOJ50R76O/giphy.gif)
 
 
-! [cat](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzA4eWQwdmduZWp5aXYwcjhkcXViM3Z4MWx1bTBjcHQ1Z2o2aG03eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF8k1BinZ3gFmVAWL3/giphy.gif)
+![cat](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzA4eWQwdmduZWp5aXYwcjhkcXViM3Z4MWx1bTBjcHQ1Z2o2aG03eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iF8k1BinZ3gFmVAWL3/giphy.gif)
 
 
 ### Use cases
