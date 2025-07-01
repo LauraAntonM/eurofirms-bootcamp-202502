@@ -18,6 +18,7 @@ connect (MONGO_URL)
     })
 
     api.use('/users', usersRouter)
+    //crear otro api.use con el mismo código pero adaptado para peticiones relacionadas con la ropa 
 
     api.use(errorHandler)
 

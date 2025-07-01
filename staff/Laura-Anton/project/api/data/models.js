@@ -41,11 +41,54 @@ const user = new Schema ({
 
 })
 
+
+
+const clothe = new Schema ({
+
+    id: {
+
+        type: String,
+        required: true,
+        unique: true
+    },
+
+    image: {
+        type: String,
+        required: true, 
+        unique: false
+    },
+
+    description: {
+
+        type: String,
+        required: true
+    }, 
+
+    size: { 
+
+        type: String,
+        required : true,
+        enum: true
+    },
+
+    category: {
+
+        type: String,
+        required: true,
+        enum: true 
+    },
+
+    title: {
+
+        type: String,
+        required: true
+    }
+
+})
+
 const User = model('User', user)
+const Clothe = model('Clothe', clothe)
+
+export {User, Clothe}
 
 
-const clothe = new Schema
-
-export{
-    User
-}
