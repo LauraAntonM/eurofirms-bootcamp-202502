@@ -2,14 +2,14 @@ import { useEffect, useState } from 'react'
 
 import { logic } from '../logic'
 
-import { Posts } from './components/Posts'
-import { CreatePost } from './components/CreatePost'
+import { Clothe } from './components/Clothe'
+import { CreateClothe } from './components/CreateClothe'
 import { useContext } from '../context'
 
 export const Home = ({ onUserLoggedOut }) => {
     const { alert } = useContext()
 
-    const [view, setView] = useState('posts')
+    const [view, setView] = useState('clothes')
     const [username, setUsername] = useState('World')
 
     useEffect(() => {
@@ -38,16 +38,16 @@ export const Home = ({ onUserLoggedOut }) => {
         }
     }
 
-    const handleCreatePostClick = () => setView('create-post')
+    const handleCreateClotheClick = () => setView('create-clothe')
 
-    const handleCreatePostCancelClicked = () => setView('posts')
+    const handleCreateClotheCancelClicked = () => setView('clothe')
 
-    const handlePostCreated = () => setView('posts')
+    const handleClothesCreated = () => setView('clothes')
 
     console.log('Home -> render')
 
     return <div className="p-5">
-        <i className="text-2xl">Logo</i>
+        <i className="text-2xl">Tienda</i>
 
         <div className="mt-2">
             <h1 className="text-xl">Hello, {username}!</h1>
@@ -55,7 +55,7 @@ export const Home = ({ onUserLoggedOut }) => {
             <button
                 className="bg-black text-white px-2 mx-1"
                 type="button"
-                onClick={handleCreatePostClick}
+                onClick={handleCreateClotheClick}
             >+</button>
 
             <button
@@ -65,10 +65,10 @@ export const Home = ({ onUserLoggedOut }) => {
             >Logout</button>
         </div>
 
-        {view === 'posts' && <Posts alert={alert} confirm={confirm} />}
-        {view === 'create-post' && <CreatePost
-            onCancelClicked={handleCreatePostCancelClicked}
-            onPostCreated={handlePostCreated}
+        {view === 'clothes' && <Clothe alert={alert} confirm={confirm} />}
+        {view === 'create-clothe' && <CreateClothe
+            onCancelClicked={handleCreateClotheCancelClicked}
+            onClotheCreated={handleClothesCreated}
         />}
     </div>
 }
