@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { logic } from '../logic'
 
 import { Clothe } from './components/Clothe'
-import { CreateClothe } from './components/CreateClothe'
+import { CreateClothe } from './components/CreateProduct'
 import { useContext } from '../context'
 
 export const Home = ({ onUserLoggedOut }) => {

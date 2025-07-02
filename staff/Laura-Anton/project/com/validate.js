@@ -24,21 +24,44 @@ export const validate = {
         if (password.length > 20) throw new ValidationError('invalid password max length')
     },
 
-    address (address){
-         if (typeof address !== 'string') throw new ValidationError('invalid address type')
+    address(address) {
+        if (typeof address !== 'string') throw new ValidationError('invalid address type')
         if (address.length < 5) throw new ValidationError('invalid address min length')
         if (address.length > 30) throw new ValidationError('invalid address max length')
 
     },
 
-    phone(phone){
-         if (typeof phone !== 'string') throw new ValidationError('invalid phone type')
+    phone(phone) {
+        if (typeof phone !== 'string') throw new ValidationError('invalid phone type')
         if (phone.length < 9) throw new ValidationError('invalid phone min length')
-        if (phone.length > 15) throw new ValidationError('invalid phone max length')   
-        },
+        if (phone.length > 15) throw new ValidationError('invalid phone max length')
+    },
 
-     userId(userId) {
+    userId(userId) {
         if (typeof userId !== 'string') throw new ValidationError('invalid userId type')
         if (userId.length !== 24) throw new ValidationError('invalid userId length')
-    }
+    },
+
+    image(image) {
+        if (typeof image !== 'string') throw new ValidationError('invalid image type')
+    },
+
+     description(description) {
+        if (typeof description !== 'string') throw new ValidationError('invalid description type')
+    },
+
+    size(size) {
+        if (typeof size !== 'string') throw new ValidationError ('invalid size type')
+    },
+
+ category(category) {
+        if (typeof category !== 'string') throw new ValidationError ('invalid category type')
+    },
+
+     title(title) {
+        if (typeof title !== 'string') throw new ValidationError ('invalid title type')
+    },
+
+
 }
+
