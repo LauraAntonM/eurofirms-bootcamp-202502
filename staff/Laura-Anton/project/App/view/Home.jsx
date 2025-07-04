@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { logic } from '../logic'
 
 import { Clothe } from './components/Clothe'
-import { CreateClothe } from './components/CreateProduct'
+import { CreateClothe } from './components/CreateClothe'
 import { useContext } from '../context'
 
 export const Home = ({ onUserLoggedOut }) => {
@@ -65,7 +65,7 @@ export const Home = ({ onUserLoggedOut }) => {
             >Logout</button>
         </div>
 
-        {view === 'clothes' && <Clothe alert={alert} confirm={confirm} />}
+        {view === 'clothe' && <Clothe alert={alert} confirm={confirm} />}
         {view === 'create-clothe' && <CreateClothe
             onCancelClicked={handleCreateClotheCancelClicked}
             onClotheCreated={handleClothesCreated}

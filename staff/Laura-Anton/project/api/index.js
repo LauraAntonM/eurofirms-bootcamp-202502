@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 
 import { usersRouter } from './routes/usersRouter.js'
+import { clothesRouter } from './routes/clothesRouter.js'
 import { errorHandler } from './middelwares/errorHandler.js'
 
 const { MONGO_URL, PORT } = process.env
@@ -18,6 +19,7 @@ connect (MONGO_URL)
     })
 
     api.use('/users', usersRouter)
+    api.use('/clothes', clothesRouter)
     //crear otro api.use con el mismo código pero adaptado para peticiones relacionadas con la ropa 
 
     api.use(errorHandler)

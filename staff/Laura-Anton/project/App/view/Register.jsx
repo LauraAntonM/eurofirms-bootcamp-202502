@@ -49,7 +49,7 @@ export const Register = ({ onLoginClicked, onUserRegistered }) => {
             <form className="mt-2 flex flex-col gap-4" onSubmit={handleRegisterSubmit}>
                 <div className="flex flex-col gap">
                     <label htmlFor="name">Nombre</label>
-                    <input className="border-2 px-1" type="text" id="name" name="name" placeholder="your full name" />
+                    <input className="border-2 px-1" type="text" id="name" name="name" placeholder=" " />
                 </div>
 
                 <div className="flex flex-col gap">
@@ -76,14 +76,17 @@ export const Register = ({ onLoginClicked, onUserRegistered }) => {
                 <div className="flex flex-col gap">
                     <label htmlFor="phone">Teléfono</label>
                     <input className="border-2 px-1" type="phone" id="phone" name="phone"
-                        placeholder=" " />
+                        placeholder= " " />
                 </div>
 
                 <div className="flex justify-between">
-                    <a className="underline" href="#" onClick={handleLoginClick}>Login</a>
+                    <a className="underline" href="#" onClick={handleLoginClick}>Iniciar sesion</a>
 
-                    <button className="bg-black text-white px-2" type="submit">Register</button>
+                    <div className="flex justify-between">
+                    <a className="underline" href="#" onClick={handleLoginClick}>Registar</a>
                 </div>
+                </div>
+                
 
             </form>
         </div>

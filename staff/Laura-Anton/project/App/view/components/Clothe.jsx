@@ -2,16 +2,16 @@ import { logic } from '../../logic'
 
 import { useContext } from '../../context'
 
-export const Post = ({ post, onPostDeleted }) => {
+export const Clothe = ({ clothe, onClotheDeleted }) => {
     const { alert, confirm } = useContext()
 
     const handleDeleteClick = () => {
-        confirm('Delete post?')
+        confirm('Delete clothe?')
             .then(result => {
                 if (result)
                     try {
-                        logic.removePost(post.id)
-                            .then(() => onPostDeleted())
+                        logic.removeClothe(clothe.id)
+                            .then(() => onClotheDeleted())
                             .catch(error => {
                                 console.error(error)
 
@@ -25,17 +25,17 @@ export const Post = ({ post, onPostDeleted }) => {
             })
     }
 
-    console.log('Post -> render')
+    console.log('Clothe -> render')
 
     return <article>
-        <h3 className="font-bold">{post.author.username}</h3>
+        <h3 className="font-bold">{clothe.author.username}</h3>
 
-        <img src={post.image} alt="" />
+        <img src={clothe.image} alt="" />
 
-        <p>{post.text}</p>
+        <p>{clothe.text}</p>
 
-        <time>{post.date}</time>
+        <time>{clothe.date}</time>
 
-        {post.own && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>}
+        {clothe.own && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>}
     </article>
 }

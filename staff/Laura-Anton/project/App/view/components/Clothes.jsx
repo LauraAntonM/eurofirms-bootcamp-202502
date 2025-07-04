@@ -2,20 +2,20 @@ import { useEffect, useState } from 'react'
 
 import { logic } from '../../logic'
 
-import { Post } from './Post'
+import { Clothe } from './Clothe'
 import { useContext } from '../../context'
 
 
-export const Posts = () => {
+export const Clothes = () => {
     const { alert } = useContext()
 
-    const [posts, setPosts] = useState([])
+    const [Clothes, setClothes] = useState([])
 
     useEffect(() => {
         try {
-            logic.getPosts()
-                .then(posts => {
-                    setPosts(posts)
+            logic.getClothes()
+                .then(clothes => {
+                    setClothes(clothes)
                 })
                 .catch(error => {
                     console.error(error)
@@ -29,11 +29,11 @@ export const Posts = () => {
         }
     }, [])
 
-    const handlePostDeleted = () => {
+    const handleclotheDeleted = () => {
         try {
-            logic.getPosts()
-                .then(posts => {
-                    setPosts(posts)
+            logic.getclothes()
+                .then(clothes => {
+                    setclothes(clothes)
                 })
                 .catch(error => {
                     console.error(error)
@@ -47,9 +47,9 @@ export const Posts = () => {
         }
     }
 
-    console.log('Posts -> render')
+    console.log('clothes -> render')
 
     return <>
-        {posts.map(post => <Post key={post.id} post={post} onPostDeleted={handlePostDeleted} />)}
+        {clothes.map(clothe => <clothe key={clothe.id} clothe={clothe} onclotheDeleted={handleclotheDeleted} />)}
     </>
 }
