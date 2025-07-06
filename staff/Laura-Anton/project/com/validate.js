@@ -27,7 +27,7 @@ export const validate = {
     address(address) {
         if (typeof address !== 'string') throw new ValidationError('invalid address type')
         if (address.length < 5) throw new ValidationError('invalid address min length')
-        if (address.length > 30) throw new ValidationError('invalid address max length')
+        if (address.length > 100) throw new ValidationError('invalid address max length')
 
     },
 

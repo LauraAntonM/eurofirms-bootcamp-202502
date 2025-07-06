@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { jsonBodyParser } from '../middelwares/jsonBodyParser.js'
+import { jsonBodyParser } from '../middlewares/jsonBodyParser.js'
 import { logic } from '../logic/index.js'
 import jwt from 'jsonwebtoken'
 

@@ -4,7 +4,7 @@ import { logic } from '../logic'
 
 import { useContext } from '../context'
 
-export const Login = ({ onRgisterClicked, onUserLoggedIn }) => {
+export const Login = ({ onRegisterClicked, onUserLoggedIn }) => {
     const { alert } = useContext()
 
     const handleRegisterClick = () => onRegisterClicked()
@@ -14,10 +14,10 @@ export const Login = ({ onRgisterClicked, onUserLoggedIn }) => {
 
         const form = event.target
 
-        const username = form.username.value 
+        const username = form.username.value
         const password = form.password.value
 
-          try {
+        try {
             logic.loginUser(username, password)
                 .then(() => {
                     form.reset()
@@ -45,7 +45,7 @@ export const Login = ({ onRgisterClicked, onUserLoggedIn }) => {
     console.log('Login -> render')
 
     return <div className="p-5">
-        <i className="text-2xl">Tiendaapp</i>
+        <i className="text-2xl">Tienda</i>
 
         <div className="mt-2">
             <h1 className="text-xl"> </h1>
@@ -64,11 +64,11 @@ export const Login = ({ onRgisterClicked, onUserLoggedIn }) => {
                 <div className="flex justify-between">
                     <a className="underline" href="#" onClick={handleRegisterClick}>Registro</a>
 
-                    <div className= "flex justify-between">
-                       <a className="underline" href="#" onClick={handleRegisterClick}>Acceso</a>
-                </div>
+                    <div className="flex justify-between">
+                        <button className="underline" type="submit" >Acceso</button>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
-    }
+}
