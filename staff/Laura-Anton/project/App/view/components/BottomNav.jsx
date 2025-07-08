@@ -7,25 +7,24 @@ export function BottomNav() {
 
 
     return (
-        <nav className="fixed bottom-0 left-0 w-full bg-white border-t shadow-md py-2 flex justify-around items-center">
-            <button onClick={() => navigate('/Inicio')}>
-                <AiOutlineHome size={24} />
+        <nav className="fixed bottom-0 left-0 w-full bg-white border-t shadow-md py-2 flex justify-around items-center ">
+            <button onClick={() => navigate('/')}>
+                <AiOutlineHome size={24} className="cursor-pointer"/>
             </button>
 
             <button onClick={() => navigate('/buscar')}>
-                <AiOutlineSearch size={24} />
+                <AiOutlineSearch size={24} className="cursor-pointer"/>
             </button>
 
             <button onClick={() => navigate('/menu')}>
-                <span className="text-xs font-semibold">MENU</span>
+                <span className="text-xs font-semibold cursor-pointer ">MENU</span>
             </button>
-
             <button onClick={() => navigate('/carrito')}>
-                <AiOutlineShoppingCart size={24} />
+                <AiOutlineShoppingCart size={24} className="cursor-pointer" />
             </button>
 
             <button onClick={() => navigate('/login')}>
-                <AiOutlineUser size={24} />
+                <AiOutlineUser size={24} className="cursor-pointer" />
             </button>
         </nav>
     )

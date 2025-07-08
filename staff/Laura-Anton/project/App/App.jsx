@@ -80,6 +80,9 @@ export const App = () => {
         {confirmMessage && <Confirm message={confirmMessage} onCancelled={handleCancelConfirm} onAccepted={handleAcceptConfirm} />}
 
         <Routes>
+            <Route path="/clothes" element={<clothes />} />
+            <Route path="/clothes/:category" element={<clothes />} />
+            
             <Route path='/' element={<Navigate to="/landing" relace />} />
 
             <Route path='/landing' element={
