@@ -3,8 +3,8 @@ import { createClothe } from './createClothe.js'
 
 connect('mongodb://localhost:27017/test-tiendaapp')
     .then(() => {
-        try {
-            return createClothe('6859a4b9e9798192a75c536b', 'https://www.zara.com/es/es/camiseta-asimetrica-drapeada-p01198180.html?v1=438594615&v2=2580457', 'camiseta color beige, estilo verano, sin mangas', 'S','CAMISAS/CAMISETAS', 'camiseta asimetrica')
+        try {  
+            return createClothe('686d3429ccb2be6f5d06f63c', 'https://static.zara.net/assets/public/b236/c521/b71c4cc0a642/86c7314738cf/03920726520-a1/03920726520-a1.jpg?ts=1746001924013&w=215', 'vestido lima, sin mangas', 'S','VESTIDOS', 'VESTIDO LIMA')
                 .then(() => console.log('Clothe created'))
                 .catch(error => console.error(error))
         }

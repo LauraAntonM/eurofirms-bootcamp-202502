@@ -47,8 +47,8 @@ const clothe = new Schema ({
 
     image: {
         type: String,
-        required: true, 
-        unique: false
+        required: true 
+        
     },
 
     description: {
@@ -74,7 +74,8 @@ const clothe = new Schema ({
     title: {
 
         type: String,
-        required: true
+        required: true,
+        unique: true
     }
 
 })

@@ -10,7 +10,7 @@ import { validate, SystemError, NotFoundError } from 'com'
  * @param {String} category
  * @param {String} title
  */
-export const createClothe =  (userId, image, description, size, category, title) => {
+export const createClothe = (userId, image, description, size, category, title) => {
     validate.userId(userId)
     validate.image(image)
     validate.description(description)
@@ -18,13 +18,13 @@ export const createClothe =  (userId, image, description, size, category, title)
     validate.category(category)
     validate.title(title)
 
-    return User.findById (userId)
+    return User.findById(userId)
         .catch(error => { throw new SystemError('mongo error') })
         .then(user => {
             if (!user) throw new NotFoundError('user not found')
 
-            return Clothe.create({ image, description, size, category, title})
-                .catch(error => { throw new SystemError('mongo error') })
+            return Clothe.create({ image, description, size, category, title })
+                .catch(error => { throw new SystemError(error.message) })
                 .then(() => { })
         })
 }
