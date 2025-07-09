@@ -11,7 +11,7 @@ import { validate, SystemError, NotFoundError } from 'com'
  * @param {String} title
  */
 export const createClothe = (userId, image, description, size, category, title) => {
-    validate.userId(userId)
+    validate.id(userId)
     validate.image(image)
     validate.description(description)
     validate.size(size)

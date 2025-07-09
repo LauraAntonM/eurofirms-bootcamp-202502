@@ -2,7 +2,7 @@ import { User } from '../data/index.js'
 import { validate, SystemError, NotFoundError } from 'com'
 
 export const getUserUsername = userId => {
-    validate.userId(userId)
+    validate.id(userId)
 
     return User.findById(userId)
         .catch(error => { throw new SystemError('mongo error') })
