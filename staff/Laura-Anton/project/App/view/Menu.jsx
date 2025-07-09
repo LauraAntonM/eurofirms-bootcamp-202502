@@ -9,21 +9,21 @@ export const Menu = () => {
            
             <div className="mt-20 space-y-6 text-lg">
                 <button
-                    onClick={() => navigate('/clothes/CAMISAS')}
+                    onClick={() => navigate('/clothes/camisas')}
                     className="text-left cursor-pointer block mb-8"
                 >
                     CAMISAS/CAMISETAS
                 </button>
 
                 <button
-                    onClick={() => navigate('/clothes/TOP')}
+                    onClick={() => navigate('/clothes/top')}
                     className="text-left cursor-pointer block mb-8"
                 >
                     TOP
                 </button>
 
                 <button
-                    onClick={() => navigate('/clothes/VESTIDOS')}
+                    onClick={() => navigate('/clothes/vestidos')}
                     className="text-left cursor-pointer block mb-8"
                 >
                     VESTIDOS

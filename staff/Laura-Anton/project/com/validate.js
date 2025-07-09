@@ -1,5 +1,7 @@
 import { ValidationError } from './errors.js'
 
+const categories = ['CAMISAS/CAMISETAS', 'TOP/BODY', 'VESTIDOS']
+
 export const validate = {
     name(name) {
         if (typeof name !== 'string') throw new ValidationError('invalid name type')
@@ -37,30 +39,37 @@ export const validate = {
         if (phone.length > 15) throw new ValidationError('invalid phone max length')
     },
 
-    userId(userId) {
-        if (typeof userId !== 'string') throw new ValidationError('invalid userId type')
-        if (userId.length !== 24) throw new ValidationError('invalid userId length')
+    id(id) {
+        if (typeof id !== 'string') throw new ValidationError('invalid Id type')
+        if (id.length !== 24) throw new ValidationError('invalid Id length')
     },
 
     image(image) {
         if (typeof image !== 'string') throw new ValidationError('invalid image type')
     },
 
-     description(description) {
+    description(description) {
         if (typeof description !== 'string') throw new ValidationError('invalid description type')
     },
 
     size(size) {
-        if (typeof size !== 'string') throw new ValidationError ('invalid size type')
+        if (typeof size !== 'string') throw new ValidationError('invalid size type')
+        if (size.length < 1) throw new ValidationError('invalid size min length')
+        if (size.length > 4) throw new ValidationError('invalid size max length')
     },
 
- category(category) {
-        if (typeof category !== 'string') throw new ValidationError ('invalid category type')
+    category(category) {
+        if (typeof category !== 'string') throw new ValidationError('invalid category type')
+        if (category.length < 2) throw new ValidationError('invalid category min length')
+        if (category.length > 50) throw new ValidationError('invalid category max length')
+        //if (category !== 'VESTIDOS' || category !== 'CAMISAS/CAMISETAS' || category !== 'TOP/BODY') throw new ValidationError('invalid category')
+        if (!categories.includes(category)) throw new ValidationError('invalid category')
     },
 
-     title(title) {
-        if (typeof title !== 'string') throw new ValidationError ('invalid title type')
+    title(title) {
+        if (typeof title !== 'string') throw new ValidationError('invalid title type')
     },
+
 
 
 }
