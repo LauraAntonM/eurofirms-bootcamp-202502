@@ -10,5 +10,14 @@ export const data = {
 
     removeToken() {
         delete sessionStorage.token
+    },
+
+    getUserId() {
+        return sessionStorage.userId
+    },
+
+    setUserId(id) {
+        sessionStorage.userId = id
     }
+
 }

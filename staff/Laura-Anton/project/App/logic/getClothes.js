@@ -3,7 +3,11 @@ import { errors } from '../../com'
  
 const { SystemError } = errors
 
-export const getClothes = () => {
+export const getClothes = (category) => {
+    const endpoint = category
+        ? `/clothes/${category}`
+        : `/clothes`
+        
     return fetch (import.meta.env.VITE_API_URL + '/clothes', {
         method: 'GET',
         headers: {

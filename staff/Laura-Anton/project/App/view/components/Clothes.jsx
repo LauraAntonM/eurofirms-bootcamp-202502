@@ -11,14 +11,9 @@ export const Clothes = () => {
 
     useEffect(() => {
         try {
-            logic.getClothes()
-                .then(allClothes => {
-                    if (category) {
-                        const filterred = allClothes.filter(clothe => clothe.category.toLowerCase() === category.toLowerCase()
-                )
-                    } else {
-                        setClothes(allClothes)
-                    }
+            logic.getClothes(category.toUpperCase())
+                .then(clothes => {
+                    setClothes(clothes)
                 })
                 .catch(error => {
                     console.error(error)
@@ -30,37 +25,15 @@ export const Clothes = () => {
         }
     }, [category])
 
-    const handleClotheDeleted = () => {
-        try {
-            logic.getClothes()
-                .then(allClothes => {
-                    const filtered = category
-                        ? allClothes.filter(clothe => clothe.category === category)
-                        : allClothes
-
-                    setClothes(filtered)
-                })
-                .catch(error => {
-                    console.error(error)
-                    alert(error.message)
-                })
-        } catch (error) {
-            console.error(error)
-            alert(error.message)
-        }
-    }
-
-    console.log('Clothes -> render')
-
     return (
         <div className="p-6">
             <h1 className="text-2xl capitalize mb-4">
-                {category ? `Sección: ${category}` : 'Todas las prendas'}
+               
             </h1>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {clothes.map(clothe => (
-                    <Clothe key={clothe.id} clothe={clothe} onClotheDeleted={handleClotheDeleted} />
+                    <Clothe key={clothe.id} clothe={clothe} onClotheDeleted={() => {}} />
                 ))}
             </div>
         </div>
