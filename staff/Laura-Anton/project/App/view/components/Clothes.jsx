@@ -3,8 +3,7 @@ import { useParams, useLocation } from 'react-router'
 import { logic } from '../../logic'
 import { Clothe } from './Clothe'
 import { useContext } from '../../context'
-import { isUserLoggedIn } from '../../logic/isUserLoggedIn'
-
+import { BottomNav } from './BottomNav'
 
 export const Clothes = () => {
     const { alert } = useContext()
@@ -27,18 +26,22 @@ export const Clothes = () => {
         }
     }, [category])
 
-    return <div className="p-6" >
-        <h1 className="text-2xl capitalize mb-4">
-            {category}
-        </h1>
+    return <>
+        <div className="p-6" >
+            <h1 className="text-2xl capitalize mb-4">
+                {category}
+            </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {clothes.map(clothe => (
-                <Clothe key={clothe.id} clothe={clothe} onClotheDeleted={() => { }} />
-            ))}
-        </div>
-    </div >
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-10">
+                {clothes.map(clothe => (
+                    <Clothe key={clothe.id} clothe={clothe} onClotheDeleted={() => { }} />
+                ))}
+            </div>
+        </div >
+        
+
+        <BottomNav />
 
 
-
+    </>
 }

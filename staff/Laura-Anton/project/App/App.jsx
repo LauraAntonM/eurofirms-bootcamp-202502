@@ -95,8 +95,7 @@ export const App = () => {
                 } />
 
 
-                {/*                 <Route path="/clothes/*" element={<Clothes />} />
- */}                <Route path="/clothes/:category" element={<Clothes />} />
+                <Route path="/clothes/:category" element={<Clothes />} />
 
             </Routes>
         </Context.Provider>
