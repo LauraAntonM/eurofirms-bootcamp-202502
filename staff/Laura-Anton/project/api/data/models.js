@@ -4,8 +4,8 @@ const { Schema, model } = mongoose
 const { Types } = Schema
 const { ObjectId } = Types
 
-const user = new Schema ({
-    name: { 
+const user = new Schema({
+    name: {
         type: String,
         required: true
     },
@@ -20,11 +20,11 @@ const user = new Schema ({
     username: {
         type: String,
         required: true,
-        unique: true 
+        unique: true
     },
 
     password: {
-        type: String, 
+        type: String,
         required: true
     },
 
@@ -34,41 +34,41 @@ const user = new Schema ({
     },
 
     phone: {
-         type: String,
-         required: true,
-         unique: true
-        }
+        type: String,
+        required: true,
+        unique: true
+    }
 
 })
 
 
 
-const clothe = new Schema ({
+const clothe = new Schema({
 
     image: {
         type: String,
-        required: true 
-        
+        required: true
+
     },
 
     description: {
 
         type: String,
         required: true
-    }, 
+    },
 
-    size: { 
+    size: {
 
         type: String,
-        required : true,
-        enum: ['XS','S','M','L', 'XL']
+        required: true,
+        enum: ['XS', 'S', 'M', 'L', 'XL']
     },
 
     category: {
 
         type: String,
         required: true,
-        enum: ['CAMISAS/CAMISETAS', 'TOP/BODY', 'VESTIDOS'], 
+        enum: ['CAMISAS', 'TOP', 'VESTIDOS'],
     },
 
     title: {
@@ -83,6 +83,6 @@ const clothe = new Schema ({
 const User = model('User', user)
 const Clothe = model('Clothe', clothe)
 
-export {User, Clothe}
+export { User, Clothe }
 
 

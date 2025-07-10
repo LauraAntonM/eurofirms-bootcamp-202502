@@ -14,9 +14,9 @@ clothesRouter.post('/', jsonBodyParser, (request, response, next) => {
 
         const { sub: userId } = jwt.verify(token, JWT_SECRET)
 
-        const { image, description, size, category, title } = request.body 
+        const { image, description, size, category, title } = request.body
 
-        logic.createClothe(userId, image, description, size, category, title) 
+        logic.createClothe(userId, image, description, size, category, title)
             .then(() => response.status(201).send())
             .catch(error => next(error))
     } catch (error) {
@@ -26,14 +26,11 @@ clothesRouter.post('/', jsonBodyParser, (request, response, next) => {
 
 clothesRouter.get('/:category', (request, response, next) => {
     try {
-        const authorization = request.headers.authorization
-        const token = authorization.slice(7)
 
-        const { sub: userId } = jwt.verify(token, JWT_SECRET)
 
         const { category } = request.params
 
-        logic.getClothes(userId, category)
+        logic.getClothes(category)
             .then(clothes => response.status(200).json(clothes))
             .catch(error => next(error))
     } catch (error) {

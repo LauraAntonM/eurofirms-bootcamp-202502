@@ -1,6 +1,6 @@
 import { ValidationError } from './errors.js'
 
-const categories = ['CAMISAS/CAMISETAS', 'TOP/BODY', 'VESTIDOS']
+const categories = ['CAMISAS', 'TOP', 'VESTIDOS']
 
 export const validate = {
     name(name) {
@@ -62,7 +62,7 @@ export const validate = {
         if (typeof category !== 'string') throw new ValidationError('invalid category type')
         if (category.length < 2) throw new ValidationError('invalid category min length')
         if (category.length > 50) throw new ValidationError('invalid category max length')
-        //if (category !== 'VESTIDOS' || category !== 'CAMISAS/CAMISETAS' || category !== 'TOP/BODY') throw new ValidationError('invalid category')
+        //if (category !== 'VESTIDOS' || category !== 'CAMISAS' || category !== 'TOP') throw new ValidationError('invalid category')
         if (!categories.includes(category)) throw new ValidationError('invalid category')
     },
 

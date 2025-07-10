@@ -5,7 +5,7 @@ fetch('http://localhost:8080/clothes', {
         'Content-Type': 'application/json'
     },
 
-    body: '{"image":"https://static.zara.net/assets/public/7510/ed07/7ed1442a8f6e/cbab1c9266a4/03253375251-a1/03253375251-a1.jpg?ts=1745426168893&w=215","description": "camiseta logo smile, frase, manga corta, color blanco con bordes en cuello y mangas negro", "size":"S", "category": "CAMISAS/CAMISETAS",   "title": "CAMISETA VERANO"}'
+    body: '{"image":"https://static.zara.net/assets/public/7510/ed07/7ed1442a8f6e/cbab1c9266a4/03253375251-a1/03253375251-a1.jpg?ts=1745426168893&w=215","description": "camiseta logo smile, frase, manga corta, color blanco con bordes en cuello y mangas negro", "size":"S", "category": "CAMISAS",   "title": "CAMISETA VERANO"}'
 })
     .catch(error => { throw Error('connection error') })
     .then(response => {

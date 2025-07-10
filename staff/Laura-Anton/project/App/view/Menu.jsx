@@ -6,13 +6,13 @@ export const Menu = () => {
 
     return (
         <div className="relative min-h-screen bg-white px-6 py-6 font-serif ">
-           
+
             <div className="mt-20 space-y-6 text-lg">
                 <button
-                    onClick={() => navigate('/clothes/camisas')}
+                    onClick={() => navigate('/clothes/CAMISAS')}
                     className="text-left cursor-pointer block mb-8"
                 >
-                    CAMISAS/CAMISETAS
+                    CAMISAS
                 </button>
 
                 <button

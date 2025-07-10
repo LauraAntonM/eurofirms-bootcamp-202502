@@ -28,14 +28,14 @@ export const Clothe = ({ clothe, onClotheDeleted }) => {
     console.log('Clothe -> render')
 
     return <article>
-        <h3 className="font-bold">{clothe.author.username}</h3>
+        <h3 className="font-bold">{clothe.title}</h3>
 
         <img src={clothe.image} alt="" />
 
-        <p>{clothe.text}</p>
+        <p>{clothe.description}</p>
 
-        <time>{clothe.date}</time>
+        {/* <time>{clothe.date}</time>
 
-        {clothe.own && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>}
+        {clothe.own && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>} */}
     </article>
 }
