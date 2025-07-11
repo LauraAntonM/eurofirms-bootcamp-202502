@@ -1,4 +1,4 @@
-export class ValidationError extends Error{
+export class ValidationError extends Error {
     constructor(message) {
         super(message)
     }
@@ -11,13 +11,13 @@ export class DuplicityError extends Error {
 }
 
 export class NotFoundError extends Error {
-    constructor(message){
+    constructor(message) {
         super(message)
     }
 }
 
 export class CredentialsError extends Error {
-    constructor(message){
+    constructor(message) {
         super(message)
     }
 }
@@ -35,7 +35,13 @@ export class SystemError extends Error {
 }
 
 export class AuthorizationError extends Error {
-    constructor(message){
+    constructor(message) {
+        super(message)
+    }
+}
+
+export class RoleError extends Error {
+    constructor(message) {
         super(message)
     }
 }
@@ -47,7 +53,8 @@ const errors = {
     CredentialsError,
     AuthorshipError,
     SystemError,
-    AuthorizationError
+    AuthorizationError,
+    RoleError
 }
 
 export default errors

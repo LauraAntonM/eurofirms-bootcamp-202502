@@ -1,4 +1,4 @@
-import mongoose, { trusted } from 'mongoose'
+import mongoose from 'mongoose'
 
 const { Schema, model } = mongoose
 const { Types } = Schema
@@ -35,10 +35,15 @@ const user = new Schema({
 
     phone: {
         type: String,
-        required: true,
-        unique: true
-    }
+        required: true
+    },
 
+    role: {
+        type: String,
+        required: true,
+        enum: ['regular', 'administrator'],
+        default: 'regular'
+    }
 })
 
 
@@ -76,7 +81,8 @@ const clothe = new Schema({
         type: String,
         required: true,
         unique: true
-    }
+    },
+
 
 })
 

@@ -4,7 +4,7 @@ import { removeClothe } from './removeClothe.js'
 connect('mongodb://localhost:27017/test-tiendaapp')
     .then(() => {
         try {
-            return removeClothe('686d3429ccb2be6f5d06f63c', '686e19223cfa125695d365dd')
+            return removeClothe('6871782f1c560aff0df278a7', '687178d10ee0a3ab753e9f54')
                 .then(() => console.log('clothe removed'))
                 .catch(error => console.error(error))
         } catch (error) {
