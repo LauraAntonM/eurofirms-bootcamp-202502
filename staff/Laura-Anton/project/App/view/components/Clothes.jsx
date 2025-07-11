@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
-import { useParams, useLocation } from 'react-router'
+import { useParams, useNavigate } from 'react-router'
 import { logic } from '../../logic'
-import { Clothe } from './Clothe'
 import { useContext } from '../../context'
 import { BottomNav } from './BottomNav'
+import { ClotheCard } from './clotheCard'
+import { AiOutlineArrowLeft } from 'react-icons/ai'
 
 export const Clothes = () => {
     const { alert } = useContext()
@@ -26,22 +27,38 @@ export const Clothes = () => {
         }
     }, [category])
 
-    return <>
-        <div className="p-6" >
-            <h1 className="text-2xl capitalize mb-4">
-                {category}
-            </h1>
+    const navigate = useNavigate()
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 m-10">
-                {clothes.map(clothe => (
-                    <Clothe key={clothe.id} clothe={clothe} onClotheDeleted={() => { }} />
-                ))}
+    return (
+        <>
+            <div className="p-4 pb-32">
+
+                <AiOutlineArrowLeft
+                    onClick={() => navigate(-1)}
+                    size={28}
+                    className="text-black cursor-pointer hover:text-gray-600 transition"
+                />
+
+
+
+                <h1 className="text-2xl capitalize mb-4 text-center">{category}</h1>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+                    {clothes.map(clothe => (
+                        <div key={clothe.id} className="flex flex-col items-center space-y-px">
+                            <ClotheCard
+                                clothe={clothe}
+                                onSizeClick={(clothe, size) =>
+                                    console.log(`Añadir al carrito: ${clothe.title} - Talla ${size}`)
+                                }
+                            />
+                            <p className="text-center text-sm font-semibold">{clothe.title}</p>
+                        </div>
+                    ))}
+                </div>
             </div>
-        </div >
-        
 
-        <BottomNav />
-
-
-    </>
+            <BottomNav />
+        </>
+    )
 }
