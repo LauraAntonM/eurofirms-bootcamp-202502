@@ -5,7 +5,7 @@ const { connect, disconnect } = mongoose
 
 connect('mongodb://localhost:27017/test-tiendaapp')
     .then(() => {
-        return User.findById('6871782f1c560aff0df278a7')
+        return User.findById('68717f6cb9bc5c7fb71d54d4')
             .catch(error => { throw new Error(error.message) })
             .then(user => {
                 user.role = 'administrator'

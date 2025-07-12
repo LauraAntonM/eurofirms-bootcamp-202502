@@ -66,7 +66,7 @@ const clothe = new Schema({
 
         type: String,
         required: true,
-        enum: ['XS', 'S', 'M', 'L', 'XL']
+        enum: ['XS', 'S', 'M', 'L', 'XL', 'XXL']
     },
 
     category: {

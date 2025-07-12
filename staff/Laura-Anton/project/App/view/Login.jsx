@@ -4,6 +4,7 @@ import { useContext } from '../context'
 import { useNavigate } from 'react-router'
 import { BottomNav } from './components/BottomNav'
 
+
 export const Login = ({ onRegisterClicked, onUserLoggedIn }) => {
     const { alert } = useContext()
     const navigate = useNavigate()

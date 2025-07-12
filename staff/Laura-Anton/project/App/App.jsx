@@ -11,7 +11,7 @@ import { Context } from './context'
 import { logic } from './logic'
 import { Menu } from './view/Menu'
 import { Clothes } from './view/components/Clothes'
-
+import { CreateClothe } from './view/components/CreateClothe'
 
 
 export const App = () => {
@@ -97,6 +97,9 @@ export const App = () => {
 
                 <Route path="/clothes/:category" element={<Clothes />} />
 
+                <Route path="/create-clothe" element={<CreateClothe />} />
+                
+                
             </Routes>
         </Context.Provider>
     )

@@ -46,7 +46,7 @@ export const Clothe = ({ clothe, onClotheDeleted }) => {
 
         <time>{clothe.date}</time>
 
-        {(clothe.own || isAdmin) && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>}
+        {(isAdmin) && <button className="border-4 border-black px-2 mx-1 cursor-pointer" onClick={handleDeleteClick}>🗑️</button>}
     </article>
 
 }
