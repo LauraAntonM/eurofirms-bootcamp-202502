@@ -3,6 +3,7 @@ import { useParams } from 'react-router'
 import { logic } from '../../logic'
 import { Context } from '../../context'
 import { ClotheCard } from './ClotheCard'
+import { BottomNav } from './BottomNav'
 
 export const Clothes = () => {
     const { category } = useParams()
@@ -41,6 +42,8 @@ export const Clothes = () => {
                         onSizeClick={(clothe, size) => {}}
                     />
                 ))}
+
+                <BottomNav />
             </div>
         </div>
     )

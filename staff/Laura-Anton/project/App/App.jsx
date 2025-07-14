@@ -10,6 +10,7 @@ import { logic } from './logic'
 import { Menu } from './view/Menu'
 import { Clothes } from './view/components/Clothes'
 import { CreateClothe } from './view/components/CreateClothe'
+import { BottomNav } from './view/components/BottomNav'
 
 
 export const App = () => {
@@ -51,14 +52,15 @@ export const App = () => {
         alert(error.message)
     }
 
-    return (
+    return (        
         <Context.Provider value={{
             alert: setAlertMessage,
             confirm: handleShowConfirm
         }}>
             {alertMessage && <Alert message={alertMessage} onAccepted={handleAlertAccepted} />}
-
             {confirmMessage && <Confirm message={confirmMessage} onCancelled={handleCancelConfirm} onAccepted={handleAcceptConfirm} />}
+
+            <div className="pb-16">
 
             <Routes>
                 <Route path="/" element={<Navigate to="/landing" replace />} />
@@ -102,6 +104,7 @@ export const App = () => {
 
 
             </Routes>
+            </div>
         </Context.Provider>
     )
 }

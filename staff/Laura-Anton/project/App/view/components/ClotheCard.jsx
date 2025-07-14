@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { logic } from '../../logic'
 
-export function ClotheCard({ clothe, onSizeClick = () => {}, onClotheDeleted = () => {} }) {
+export function ClotheCard({ clothe, onSizeClick = () => { }, onClotheDeleted = () => { } }) {
     const [flipped, setFlipped] = useState(false)
     const [showConfirm, setShowConfirm] = useState(false)
 
@@ -45,26 +45,26 @@ export function ClotheCard({ clothe, onSizeClick = () => {}, onClotheDeleted = (
                 style={{ perspective: '1000px' }}
             >
                 <div
-                    className={`transition-transform duration-700 w-full h-full relative ${
-                        flipped ? 'transform rotate-y-180' : ''
-                    }`}
+                    className={`transition-transform duration-700 w-full h-full relative ${flipped ? 'transform rotate-y-180' : ''
+                        }`}
                     style={{ transformStyle: 'preserve-3d' }}
                 >
                     <div className="absolute inset-0 w-full h-full backface-hidden" style={{ backfaceVisibility: 'hidden' }}>
                         <img
                             src={clothe.image}
                             alt={clothe.description}
-                            className="w-full h-full object-cover rounded"
+                            className="w-full h-full object-contain rounded"
                         />
                         <p className="text-center mt-2 text-sm font-semibold">{clothe.title}</p>
                     </div>
 
-                   
+
                     <div
                         className="absolute inset-0 w-full h-full rotate-y-180 flex flex-col items-center justify-center bg-white p-4"
                         style={{ backfaceVisibility: 'hidden' }}
                     >
                         <p className="text-sm mb-2">Selecciona talla:</p>
+                        <p className="text-sm mb-2 text-center font-medium">{clothe.description}</p>
                         <div className="flex gap-2 flex-wrap justify-center">
                             {sizes.map(size => (
                                 <button

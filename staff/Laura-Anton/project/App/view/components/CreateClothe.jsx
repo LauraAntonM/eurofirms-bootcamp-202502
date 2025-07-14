@@ -1,6 +1,7 @@
 import { logic } from '../../logic'
 import { useNavigate } from 'react-router'
 import { useContext } from '../../context'
+import { BottomNav } from './BottomNav'
 
 
 export const CreateClothe = ({ onClotheCreated }) => {
@@ -56,55 +57,55 @@ export const CreateClothe = ({ onClotheCreated }) => {
 
     console.log('CreateClothe -> render')
 
-    return <div className="mt-2">
-        <h1 className="text-xl">Crear prenda</h1>
+    return (
 
+        <div className="mt-2 px-12">
+            <h1 className="text-xl mb-4">Crear prenda</h1>
 
-        <form className="mt-2 flex flex-col gap-4" onSubmit={handleCreateClotheSubmit}>
-            <div className="flex flex-col gap">
-                <label htmlFor="category">Categoria</label>
-                <select name="category" id="category">
-                    <option value="camisas">Camisas</option>
-                    <option value="top">Top</option>
-                    <option value="vestidos">Vestidos</option>
-                </select>
-            </div>
+            <form className="flex flex-col gap-4" onSubmit={handleCreateClotheSubmit}>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="category">Categoría</label>
+                    <select name="category" id="category" className="border border-black px-12 py-2 rounded">
+                        <option value="camisas">Camisas</option>
+                        <option value="top">Top</option>
+                        <option value="vestidos">Vestidos</option>
+                    </select>
+                </div>
 
-            <div className="flex flex-col gap">
-                <label htmlFor="size">Talla</label>
-                <select name="size" id="size">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-            </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="size">Talla</label>
+                    <select name="size" id="size" className="border border-black px-12 py-2 rounded">
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+                </div>
 
-            <div className="flex flex-col gap">
-                <label htmlFor="image">Imagen</label>
-                <input className="border-2 px-1" type="text" id="image" name="image" placeholder="the post image" />
-            </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="image">Imagen</label>
+                    <input className="border border-black px-12 py-2 rounded" type="text" id="image" name="image" placeholder="URL de la imagen" />
+                </div>
 
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="title">Título</label>
+                    <input className="border border-black px-12 py-2 rounded" type="text" id="title" name="title" placeholder="Título de la prenda" />
+                </div>
 
-            <div className="flex flex-col gap">
-                <label htmlFor="title">Titulo</label>
-                <input className="border-2 px-1" type="text" id="title" name="title" placeholder="the post text" />
-            </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="description">Descripción</label>
+                    <textarea className="border border-black px-12 py-2 rounded" id="description" name="description" placeholder="Descripción detallada"></textarea>
+                </div>
 
-            <div className="flex flex-col gap">
-                <label htmlFor="description">Descripción</label>
-                <textarea className="border-2 px-1" type="text" id="description" name="description" placeholder="the post text" ></textarea>
-            </div>
+                <div className="flex justify-between">
+                    <a className="underline" href="#" onClick={handleCancelClick}>Cancelar</a>
+                    <button className="bg-black text-white px-12 py-2 rounded" type="submit">Crear</button>
 
-            <div className="flex justify-between">
-                <a className="underline" href="#" onClick={handleCancelClick}>Cancel</a>
-
-                <button className="bg-black text-white px-2" type="submit">Create</button>
-
-
-            </div>
-        </form>
-    </div>
+                </div>
+            </form>
+            <BottomNav />
+        </div>
+    )
 }
