@@ -30,5 +30,5 @@ export const loginUser = (username, password) => {
 
                     throw new constructor(message)
                 })        
-        })
+        }) 
 }

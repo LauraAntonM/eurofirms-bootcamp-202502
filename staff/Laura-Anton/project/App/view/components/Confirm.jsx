@@ -1,17 +1,23 @@
-export const Confirm = ({ message, onCancelled, onAccepted }) => {
-    const handleCancelConfirm = () => onCancelled()
-
-    const handleAcceptConfirm = () => onAccepted()
-
-    return <div className="p-10 bg-gray-500/70  absolute w-full h-full flex flex-col justify-center">
-        <div className="bg-white border-2 border-black p-2 flex flex-col gap-2">
-            <p>{message}</p>
-
-            <div className="self-end flex gap-2">
-                <button className="text-black border-black border-2 px-2" type="button" onClick={handleCancelConfirm}>Cancel</button>
-
-                <button className="bg-black text-white px-2" type="button" onClick={handleAcceptConfirm}>Accept</button>
+export function Confirm({ message, onAccepted, onCancelled }) {
+    return (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white p-6 rounded shadow-lg text-center max-w-sm w-full mx-4">
+                <p className="mb-6 text-lg">{message}</p>
+                <div className="flex justify-center gap-4">
+                    <button
+                        className="bg-gray-300 px-4 py-2 rounded hover:bg-gray-400 transition"
+                        onClick={onCancelled}
+                    >
+                        Cancelar
+                    </button>
+                    <button
+                        className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+                        onClick={onAccepted}
+                    >
+                        Aceptar
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
+    )
 }

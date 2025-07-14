@@ -2,7 +2,10 @@ import { logic } from '../../logic'
 import { useNavigate } from 'react-router'
 import { useContext } from '../../context'
 
-export const CreateClothe = () => {
+
+export const CreateClothe = ({ onClotheCreated }) => {
+
+
     const navigate = useNavigate()
 
     const { alert } = useContext()
@@ -14,13 +17,13 @@ export const CreateClothe = () => {
 
         const form = event.target
 
-        const category = form.category.value
+        const category = form.category.value.toUpperCase()
         const size = form.size.value
         const image = form.image.value
-        const title = form.title.value 
+        const title = form.title.value
         const description = form.description.value
-        
-              
+
+
 
         try {
             logic.createClothe(category, size, image, title, description)
@@ -70,12 +73,12 @@ export const CreateClothe = () => {
             <div className="flex flex-col gap">
                 <label htmlFor="size">Talla</label>
                 <select name="size" id="size">
-                    <option value="xs">XS</option>
-                    <option value="s">S</option>
-                    <option value="xs">M</option>
-                    <option value="s">L</option>
-                    <option value="xl">XL</option>
-                    <option value="xxl">XXL</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
                 </select>
             </div>
 
@@ -84,7 +87,7 @@ export const CreateClothe = () => {
                 <input className="border-2 px-1" type="text" id="image" name="image" placeholder="the post image" />
             </div>
 
-            
+
             <div className="flex flex-col gap">
                 <label htmlFor="title">Titulo</label>
                 <input className="border-2 px-1" type="text" id="title" name="title" placeholder="the post text" />

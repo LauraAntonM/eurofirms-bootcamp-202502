@@ -1,3 +1,4 @@
+
 import { User, Clothe } from '../data/index.js'
 import { validate, SystemError, NotFoundError, RoleError } from 'com'
 
@@ -23,8 +24,8 @@ export const createClothe = (userId, image, description, size, category, title) 
         .catch(error => { throw new SystemError('mongo error') })
         .then(user => {
             if (!user) throw new NotFoundError('user not found')
-            if(user.role !== 'administrator') throw new RoleError('user is not administrator')
-                    
+            if (user.role !== 'administrator') throw new RoleError('user is not administrator')
+
 
             return Clothe.create({ image, description, size, category, title })
                 .catch(error => { throw new SystemError(error.message) })

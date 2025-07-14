@@ -14,13 +14,13 @@ export const createClothe = (category, size, image,title, description) => {
             Authorization: 'Bearer ' + data.getToken(),
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ image, title })
+        body: JSON.stringify({ category, size, image, title, description})
     })
         .catch(error => { throw new SystemError('connection error') })
         .then(response => {
             const { status } = response
 
-            if (status === 201) return
+            if (status === 201) return Promise.resolve()
 
             return response.json()
                 .catch(error => { throw new SystemError('json error') })

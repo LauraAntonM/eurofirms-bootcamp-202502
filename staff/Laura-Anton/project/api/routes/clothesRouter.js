@@ -47,7 +47,7 @@ clothesRouter.delete('/:postId', (request, response, next) => {
 
         const { postId } = request.params
 
-        logic.removePost(userId, postId)
+        logic.removeClothe(userId, postId)
             .then(() => response.status(204).send())
             .catch(error => next(error))
     } catch (error) {

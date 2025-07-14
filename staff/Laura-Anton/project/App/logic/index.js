@@ -6,8 +6,8 @@ import { logoutUser } from './logoutUser'
 import { isUserAdministrator } from './isUserAdministrator'
 
 import { getClothes } from './getClothes'
-import { createClothe } from '../../api/logic/createClothe'
-import { removeClothe } from '../../api/logic/removeClothe'
+import { createClothe } from './createClothe'
+import { removeClothe } from './removeClothe'
 
  export const logic = {
     registerUser,

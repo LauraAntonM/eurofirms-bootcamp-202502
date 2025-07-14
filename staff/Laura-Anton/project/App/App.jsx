@@ -1,13 +1,11 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router'
-
 import { Landing } from './view/Landing'
 import { Register } from './view/Register'
 import { Login } from './view/Login'
 import { Alert } from './view/components/Alert'
 import { Confirm } from './view/components/Confirm'
 import { Context } from './context'
-
 import { logic } from './logic'
 import { Menu } from './view/Menu'
 import { Clothes } from './view/components/Clothes'
@@ -25,7 +23,6 @@ export const App = () => {
     const handleLoginClicked = () => navigate('/login')
     const handleUserRegistered = () => navigate('/login')
     const handleUserLoggedIn = () => navigate('/menu')
-    const handleUserLoggedOut = () => navigate('/login')
     const handleMenuClicked = () => navigate('/menu')
     const handleMenuLoggedIn = () => navigate('/menu')
 
@@ -97,9 +94,13 @@ export const App = () => {
 
                 <Route path="/clothes/:category" element={<Clothes />} />
 
-                <Route path="/create-clothe" element={<CreateClothe />} />
-                
-                
+                <Route path="/create-clothe" element={
+                    <CreateClothe
+                        onClotheCreated={() => navigate('/menu')}
+                    />
+                } />
+
+
             </Routes>
         </Context.Provider>
     )
